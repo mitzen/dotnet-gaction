@@ -9,7 +9,6 @@ jobs:
 
  test:
    runs-on: ubuntu-latest
-   needs: [test]
    steps:
      - name: Login Fake 
        run: |
