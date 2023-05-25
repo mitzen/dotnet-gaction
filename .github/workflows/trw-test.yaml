@@ -4,4 +4,14 @@ on:
       name:
         required: true
         type: string
-    
+  
+jobs:
+
+ test:
+   runs-on: ubuntu-latest
+   steps:
+     - name: Login Fake 
+       run: |
+           echo "variable"
+           echo $MYVAR
+           echo "SECRET" 
