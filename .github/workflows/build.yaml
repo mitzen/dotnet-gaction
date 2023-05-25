@@ -61,7 +61,7 @@ jobs:
 
   
   call-workflow-passing-data:
-    uses: github.com/mitzen/dotnet-gaction/.github/workflows/trw-test.yaml@main
+    uses: mitzen/dotnet-gaction/.github/workflows/trw-test.yaml@main
     with:
       name: jeremywoo
    
