@@ -27,11 +27,12 @@ jobs:
       - name: Login Fake 
         run: |
            echo "variable"
-           echo ${{ env.MY_AZURE_VARIABLE }}
+           echo $MYVAR
            echo "SECRET" 
            echo ${{ env.MYSECRET }}
         env:
             MYSECRET: ${{ secrets.MY_AZURE_SECRET }}
+            MYVAR: ${{vars.MY_AZURE_VARIABLE}}
 
       - name: Install dependencies
         run: dotnet restore
