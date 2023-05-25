@@ -59,7 +59,6 @@ jobs:
            echo $MYVAR
            echo "SECRET" 
 
-  
   call-workflow-passing-data:
     uses: mitzen/dotnet-gaction/.github/workflows/trw-test.yaml@main
     with:
