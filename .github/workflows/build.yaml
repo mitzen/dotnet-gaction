@@ -51,10 +51,11 @@ jobs:
   test:
    runs-on: ubuntu-latest
    needs: [build]
-   
+
    steps:
-     - name: run script 
-        run: | 
-           echo "hello"
-           echo "Title"
+     - name: Login Fake 
+       run: |
+           echo "variable"
+           echo $MYVAR
+           echo "SECRET" 
    
