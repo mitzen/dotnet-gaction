@@ -16,6 +16,14 @@ jobs:
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: ${{ matrix.dotnet-version }}
+      - name: run script 
+        run: | 
+           echo "hello"
+           echo "Title"
+           echo "::Name:Jeremy::"
+           echo "masking"
+           echo "::add-mask::Mona The Octocat"
+      
       - name: Install dependencies
         run: dotnet restore
       - name: Build
