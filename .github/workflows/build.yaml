@@ -28,8 +28,8 @@ jobs:
         run: |
            echo "variable"
            echo ${{ env.MY_AZURE_VARIABLE }}
-           echo "SECRET" 
-           echo ${{ secret.MY_AZURE_SECRET }}
+          #  echo "SECRET" 
+          #  echo ${{ secret.MY_AZURE_SECRET }}
 
       - name: Install dependencies
         run: dotnet restore
