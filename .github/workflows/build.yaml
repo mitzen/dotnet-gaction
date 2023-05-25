@@ -23,13 +23,15 @@ jobs:
            echo "::Name:Jeremy::"
            echo "masking"
            echo "::add-mask::Mona The Octocat"
-
+        
       - name: Login Fake 
         run: |
            echo "variable"
            echo ${{ env.MY_AZURE_VARIABLE }}
-          #  echo "SECRET" 
-          #  echo ${{ secret.MY_AZURE_SECRET }}
+           echo "SECRET" 
+           echo ${{ env.MYSECRET }}
+        env:
+            MYSECRET: ${{ secrets.MY_AZURE_SECRET }}
 
       - name: Install dependencies
         run: dotnet restore
