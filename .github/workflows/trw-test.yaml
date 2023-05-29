@@ -12,6 +12,6 @@ jobs:
    steps:
      - name: Login Fake 
        run: |
-           echo "variable"
-           echo $MYVAR
+           echo "paramter value passed from above"
+           echo ${{ inputs.name }}
            echo "SECRET" 
