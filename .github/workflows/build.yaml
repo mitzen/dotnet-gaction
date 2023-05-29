@@ -24,11 +24,11 @@ jobs:
      - name: Install dependencies
        run: dotnet restore
      
+     - name: Build
+       run: dotnet build --configuration Release --no- --output bin
+     
      - name: Install dependencies
        run: ls -R
-     
-     - name: Build
-       run: dotnet build --configuration Release --no-restore
      
      - name: Test
        run: dotnet test --no-restore --verbosity normal
@@ -36,4 +36,4 @@ jobs:
      - uses: actions/upload-artifact@v3
        with:
          name: build-artifact
-         path: ${{GITHUB_WORKSPACE}}/bin/Release/net7.0
+         path: bin/
