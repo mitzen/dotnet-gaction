@@ -15,3 +15,7 @@ jobs:
            echo "paramter value passed from above"
            echo ${{ inputs.name }}
            echo "SECRET" 
+     - name: Test 
+       run: | 
+           echo "testing done it all up and down"
+           echo ${{ inputs.name }}
