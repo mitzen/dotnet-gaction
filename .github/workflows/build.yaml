@@ -25,7 +25,7 @@ jobs:
        run: dotnet restore
      
      - name: Build
-       run: dotnet build --configuration Release --no- --output bin
+       run: dotnet build --configuration Release --no- --output release
      
      - name: Install dependencies
        run: ls -R
@@ -36,4 +36,4 @@ jobs:
      - uses: actions/upload-artifact@v3
        with:
          name: build-artifact
-         path: bin/
+         path: release/
