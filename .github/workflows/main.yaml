@@ -16,4 +16,7 @@ jobs:
     with:
       artifact: build-artifact
       repository: kepung
-      tags: "dotnetaction"  
+      tags: "dotnetaction"
+    secrets:
+      docker_username: ${{ secrets.DOCKERUSER}} 
+      docker_token: ${{ secrets.DOCKERUSER}}
