@@ -1,14 +1,11 @@
 on:
   workflow_call:
     inputs:
-      
+
       artifact:
         required: true
         type: string
 
-      dependency:
-        type: string
-      
       repository:
         required: true
         type: string
