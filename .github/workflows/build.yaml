@@ -27,9 +27,6 @@ jobs:
      - name: Build
        run: dotnet build --configuration Release -o release
      
-     - name: Install dependencies
-       run: ls -R
-     
      - name: Test
        run: dotnet test --no-restore --verbosity normal
      
