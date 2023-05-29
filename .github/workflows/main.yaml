@@ -16,6 +16,4 @@ jobs:
     with:
       artifact: build-artifact
       repository: kepung
-      tags: "dotnetaction"
-      dependency: build-image
-  
+      tags: "dotnetaction"  
