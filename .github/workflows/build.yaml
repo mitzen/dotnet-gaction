@@ -60,7 +60,7 @@ jobs:
            echo "SECRET" 
 
   call-workflow-passing-data:
-    uses: mitzen/dotnet-gaction/.github/workflows/trw-test.yaml@main
+    uses: mitzen/dotnet-gaction/.github/workflows/trw-test.yaml@feat/develop
     with:
       name: jeremywoo
    
