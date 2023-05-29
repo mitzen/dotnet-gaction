@@ -52,8 +52,11 @@ jobs:
     with:
       projectPath: jeremywoo
 
-  # call-workflow-passing-data:
-  #   uses: mitzen/dotnet-gaction/.github/workflows/trw-test.yaml@feat/develop
-  #   with:
-  #     name: jeremywoo
-   
+  build-image:
+    uses: mitzen/dotnet-gaction/.github/workflows/buildimage.yaml@feat/develop
+    with:
+      artifact: build-artifact
+      repository: kepung
+      tags: "dotnetaction"
+      dependency: build-image
+  
