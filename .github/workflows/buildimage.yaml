@@ -20,7 +20,7 @@ on:
 jobs:
  build-image:
    runs-on: ubuntu-latest
-   needs: build-image
+   #needs: build-image
    steps:
      - name: Login Fake 
        run: |
