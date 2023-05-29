@@ -53,7 +53,7 @@ jobs:
       projectPath: jeremywoo
 
   build-image:
-    uses: mitzen/dotnet-gaction/.github/workflows/buildimage.yaml@feat/develop
+    uses: mitzen/dotnet-gaction/.github/workflows/buildimage.yaml@main
     with:
       artifact: build-artifact
       repository: kepung
