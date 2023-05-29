@@ -1,66 +1,39 @@
-name: dotnet package
+on:
+  workflow_call:
+    inputs:
+      projectPath:
+        required: true
+        type: string
 
-on: [push]
-
-jobs:
-  build:
-
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        dotnet-version: [ '6.0.x' ]
-
-    steps:
-      - uses: actions/checkout@v3
-      - name: Setup .NET Core SDK ${{ matrix.dotnet-version }}
-        uses: actions/setup-dotnet@v3
-        with:
-          dotnet-version: ${{ matrix.dotnet-version }}
-      - name: run script 
-        run: | 
-           echo "hello"
-           echo "Title"
-           echo "::Name:Jeremy::"
-           echo "masking"
-           echo "::add-mask::Mona The Octocat"
+      dotnet-version:
+        type: string
+        default: "6.0.x" 
         
-      - name: Login Fake 
-        run: |
-           echo "variable"
-           echo $MYVAR
-           echo "SECRET" 
-           echo ${{ env.MYSECRET }}
-           echo "secret2"
-           echo "${{ secrets.MY_AZURE_SECRET }}"
+jobs:
 
-        env:
-            MYSECRET: ${{ secrets.MY_AZURE_SECRET }}
-            MYVAR: ${{vars.MY_AZURE_VARIABLE}}
-
-      - name: Install dependencies
-        run: dotnet restore
-      - name: Build
-        run: dotnet build --configuration Release --no-restore
-      - name: Test
-        run: dotnet test --no-restore --verbosity normal
-      - uses: actions/upload-artifact@v3
-        with:
-          name: build-artifact
-          path:  /home/runner/work/dotnet-gaction/dotnet-gaction/bin
-
-  test:
+ test:
    runs-on: ubuntu-latest
-   needs: [build]
-
    steps:
-     - name: Login Fake 
-       run: |
-           echo "variable"
-           echo $MYVAR
-           echo "SECRET" 
-
-  call-workflow-passing-data:
-    uses: mitzen/dotnet-gaction/.github/workflows/trw-test.yaml@feat/develop
-    with:
-      name: jeremywoo
-   
+     - uses: actions/checkout@v3
+     
+     - name: Setup .NET Core SDK ${{ inputs.dotnet-version }}
+       uses: actions/setup-dotnet@v3
+       with:
+          dotnet-version: ${{ inputs.dotnet-version }}
+     
+     - name: Install dependencies
+       run: dotnet restore
+     
+     - name: Install dependencies
+       run: ls -R
+     
+     - name: Build
+       run: dotnet build --configuration Release --no-restore
+     
+     - name: Test
+       run: dotnet test --no-restore --verbosity normal
+     
+     - uses: actions/upload-artifact@v3
+       with:
+         name: build-artifact
+         path:    bin

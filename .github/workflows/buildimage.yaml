@@ -1,0 +1,17 @@
+on:
+  workflow_call:
+    inputs:
+      name:
+        required: true
+        type: string
+  
+jobs:
+
+ test:
+   runs-on: ubuntu-latest
+   steps:
+     - name: Login Fake 
+       run: |
+           echo "paramter value passed from above"
+           echo ${{ inputs.name }}
+           echo "SECRET" 

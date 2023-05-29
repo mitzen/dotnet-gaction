@@ -1,0 +1,59 @@
+name: dotnet package
+
+on: [push]
+
+jobs:
+  # build:
+  #   runs-on: ubuntu-latest
+  #   strategy:
+  #     matrix:
+  #       dotnet-version: [ '6.0.x' ]
+
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #     - name: Setup .NET Core SDK ${{ matrix.dotnet-version }}
+  #       uses: actions/setup-dotnet@v3
+  #       with:
+  #         dotnet-version: ${{ matrix.dotnet-version }}
+  #     - name: run script 
+  #       run: | 
+  #          echo "hello"
+  #          echo "Title"
+  #          echo "::Name:Jeremy::"
+  #          echo "masking"
+  #          echo "::add-mask::Mona The Octocat"
+        
+  #     - name: Login Fake 
+  #       run: |
+  #          echo "variable"
+  #          echo $MYVAR
+  #          echo "SECRET" 
+  #          echo ${{ env.MYSECRET }}
+  #          echo "secret2"
+  #          echo "${{ secrets.MY_AZURE_SECRET }}"
+
+  #       env:
+  #           MYSECRET: ${{ secrets.MY_AZURE_SECRET }}
+  #           MYVAR: ${{vars.MY_AZURE_VARIABLE}}
+
+  #     - name: Install dependencies
+  #       run: dotnet restore
+  #     - name: Build
+  #       run: dotnet build --configuration Release --no-restore
+  #     - name: Test
+  #       run: dotnet test --no-restore --verbosity normal
+  #     - uses: actions/upload-artifact@v3
+  #       with:
+  #         name: build-artifact
+  #         path:  /home/runner/work/dotnet-gaction/dotnet-gaction/bin
+
+  build-project:
+    uses: mitzen/dotnet-gaction/.github/workflows/build.yaml@main
+    with:
+      projectPath: jeremywoo
+
+  # call-workflow-passing-data:
+  #   uses: mitzen/dotnet-gaction/.github/workflows/trw-test.yaml@feat/develop
+  #   with:
+  #     name: jeremywoo
+   
