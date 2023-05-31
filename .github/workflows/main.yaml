@@ -20,3 +20,14 @@ jobs:
     secrets:
       docker_username: ${{ secrets.DOCKERUSER}} 
       docker_token: ${{ secrets.DOCKERUSER}}
+
+  kubernetes-deploy:
+     uses: mitzen/dotnet-gaction/.github/workflows/kubernetes/deploy.yaml@main
+     with: 
+        imageName: "imagename"
+        rg: "rg"
+        clusterName: "clustername"
+        environment: "environment"
+     secrets:
+        registry_username: ${{ secrets.DOCKERUSER}}
+        registry_secret: ${{ secrets.DOCKERUSER}}
