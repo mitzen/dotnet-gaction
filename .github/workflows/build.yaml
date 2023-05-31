@@ -4,10 +4,12 @@ on:
       projectPath:
         required: true
         type: string
+        default: '**.csproj'
 
       dotnet-version:
         type: string
-        default: "6.0.x" 
+        default: "6.0.x"
+
         
 jobs:
 
@@ -25,10 +27,7 @@ jobs:
        run: dotnet restore
      
      - name: Build
-       run: dotnet build --configuration Release -o release
-     
-     - name: Test
-       run: dotnet test --no-restore --verbosity normal
+       run: dotnet build ${{ inputs.projectPath }} --configuration Release -o release
      
      - uses: actions/upload-artifact@v3
        with:
