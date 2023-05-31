@@ -22,7 +22,7 @@ jobs:
       docker_token: ${{ secrets.DOCKERUSER}}
 
   kubernetes-deploy:
-     uses: mitzen/dotnet-gaction/.github/workflows/othertemplate/kubernetes-deploy.yaml@main
+     uses: mitzen/dotnet-gaction/.github/workflows/kubernetes-deploy.yaml@main
      needs: [build-image]
      
      with: 
