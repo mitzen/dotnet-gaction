@@ -25,7 +25,8 @@ on:
         type: string
   
 jobs:
- k8-deploy:
+
+ kubernetes-deploy:
    runs-on: ubuntu-latest
    environment: ${{ inputs.environment }}
 
