@@ -23,6 +23,8 @@ jobs:
 
   kubernetes-deploy:
      uses: mitzen/dotnet-gaction/.github/workflows/kubernetes-deploy.yaml@main
+     needs: [build-image]
+     
      with: 
         imageName: "imagename"
         rg: "rg"
