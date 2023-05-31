@@ -7,7 +7,7 @@ jobs:
   build-project:
     uses: mitzen/dotnet-gaction/.github/workflows/build.yaml@main
     with:
-      projectPath: jeremywoo
+      projectPath: dotnet-gaction.csproj
 
   build-image:
     uses: mitzen/dotnet-gaction/.github/workflows/buildimage.yaml@main
