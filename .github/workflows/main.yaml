@@ -28,7 +28,7 @@ jobs:
      with: 
         resource_group: "myrg"
         imageName: "imagename"
-        clusterName: "clustername"
+        cluster_name: "clustername"
         environment: "production"
         container_registry: "container_registry"
         chart_path: "chart_path"
