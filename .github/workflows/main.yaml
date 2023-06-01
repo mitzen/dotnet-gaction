@@ -26,10 +26,12 @@ jobs:
      needs: [build-image]
      
      with: 
+        resource_group: "myrg"
         imageName: "imagename"
-        rg: "rg"
         clusterName: "clustername"
         environment: "production"
+        container_registry: "container_registry"
+        chart_path: "chart_path"
      secrets:
-        registry_username: ${{ secrets.DOCKERUSER}}
-        registry_secret: ${{ secrets.DOCKERUSER}}
+        AZURE_CREDENTIALS: ${{ secrets.DOCKERUSER}}
+     
