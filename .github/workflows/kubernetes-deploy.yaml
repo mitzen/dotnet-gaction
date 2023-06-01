@@ -32,6 +32,10 @@ on:
       chart_version:
         type: string
         default: 'latest'
+      
+      creds: 
+        type: string 
+      
   
 jobs:
 
@@ -47,9 +51,9 @@ jobs:
       - name: Azure Login
         uses: azure/login@v1
         with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
+          creds: ${{ inputs.creds }}
 
-      - name: Gets K8s context
+      - name: Set K8s context
         uses: azure/aks-set-context@v3
         with:
             creds: ${{ secrets.AZURE_CREDENTIALS }}
