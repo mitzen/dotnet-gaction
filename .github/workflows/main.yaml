@@ -33,5 +33,5 @@ jobs:
         container_registry: "container_registry"
         chart_path: "chart_path"
      secrets:
-        AZURE_CREDENTIALS: ${{ secrets.AZURE_CREDENTIALS }}
+        AZURE_CREDENTIALS: ${{ vars.AZURE_CREDENTIALS }}
      
