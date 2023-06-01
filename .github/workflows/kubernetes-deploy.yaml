@@ -30,7 +30,6 @@ on:
         type: string
 
       chart_version:
-        required: true
         type: string
         default: 'latest'
   
