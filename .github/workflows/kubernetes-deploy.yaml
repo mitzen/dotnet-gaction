@@ -1,8 +1,8 @@
 on:
   workflow_call:
-    secrets:
-      AZURE_CREDENTIALS:
-        required: true   
+    # secrets:
+    #   AZURE_CREDENTIALS:
+    #     required: true   
 
     inputs:
       resource_group:
